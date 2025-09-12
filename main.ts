@@ -72,8 +72,6 @@ namespace emakefun {
                 throw "Error: module init failed.";
             }
         }
-
-        basic.showString("111")
     }
 
     /**
@@ -132,7 +130,6 @@ namespace emakefun {
         if (!writeCommand(command, "\r\nOK\r\n", 15000)) {
             throw "Error: WiFi connection failed.";
         }
-        basic.showString("112")
     }
 
     /**
@@ -226,6 +223,8 @@ namespace emakefun {
     //% block="MQTT set user properties:|connection scheme $scheme|client ID $client_id|username $username|password $password|resource path $path"
     //% subcategory="Luoyu67"
     //% group="MQTT"
+    //% scheme.shadow="enumval"
+    //% scheme.defl=ConnectionScheme.kMqttOverTcp
     //% weight=70
     export function mqttUserConfig(
         scheme: ConnectionScheme = ConnectionScheme.kMqttOverTcp,
@@ -238,8 +237,6 @@ namespace emakefun {
         if (!writeCommand(command, "\r\nOK\r\n", 500)) {
             throw "Error: MQTT configuration user properties failed.";
         }
-
-        basic.showString("113")
     }
 
     /**
@@ -251,9 +248,7 @@ namespace emakefun {
     //% block="MQTT to connect server: host $host port $port automatic||reconnect $reconnect"
     //% subcategory="Luoyu67"
     //% group="MQTT"
-    //% scheme.shadow="enumval"
-    //% scheme.defl=ConnectionScheme.kMqttOverTcp
-    //% port.min=2
+    //% port.min=1
     //% port.max=65535
     //% reconnect.defl=true
     //% weight=65
@@ -262,8 +257,6 @@ namespace emakefun {
         if (!writeCommand(command, "\r\nOK\r\n", 10000)) {
             throw "Error: MQTT connection failed.";
         }
-
-        basic.showString("114")
     }
 
     /**
@@ -310,8 +303,6 @@ namespace emakefun {
     //% qos.defl=0
     //% weight=50
     export function mqttSubscribe(topic: string, qos: number = 0): void {
-
-        basic.showString("QoS:" + qos.toString())
         const command = `AT+MQTTSUB=0,"${topic}",${qos}`;
         if (!writeCommand(command, "\r\nOK\r\n", 500)) {
             throw "Error: MQTT subscription failed.";
@@ -385,4 +376,3 @@ namespace emakefun {
         return { topic: topic, message: received_data };
     }
 }
-//% advanced=true
