@@ -249,6 +249,7 @@ namespace emakefun {
     //% group="MQTT"
     //% port.min=1
     //% port.max=65535
+    //% port.defl=1
     //% reconnect.defl=true
     //% weight=65
     export function mqttConnect(host: string, port: number, reconnect: boolean = true): void {
