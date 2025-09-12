@@ -223,7 +223,6 @@ namespace emakefun {
     //% block="MQTT set user properties:|connection scheme $scheme|client ID $client_id|username $username|password $password|resource path $path"
     //% subcategory="Luoyu67"
     //% group="MQTT"
-    //% scheme.shadow="enumval"
     //% scheme.defl=ConnectionScheme.kMqttOverTcp
     //% weight=70
     export function mqttUserConfig(
@@ -250,6 +249,7 @@ namespace emakefun {
     //% group="MQTT"
     //% port.min=1
     //% port.max=65535
+    //% port.defl=1883
     //% reconnect.defl=true
     //% weight=65
     export function mqttConnect(host: string, port: number, reconnect: boolean = true): void {
