@@ -1,0 +1,27 @@
+{
+    "name": "esp_at_luoyu67",
+    "version": "1.0.0",
+    "description": "Extension for Emakefun ESP-AT Manager",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "microphone": "*"
+    },
+    "files": [
+        "README.md",
+        "main.blocks",
+        "main.ts",
+        "esp_at_stream_util.ts",
+        "_locales/zh/esp_at_luoyu67-jsdoc-strings.json",
+        "_locales/zh/esp_at_luoyu67-strings.json"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}
