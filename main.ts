@@ -72,6 +72,8 @@ namespace emakefun {
                 throw "Error: module init failed.";
             }
         }
+
+        basic.showString("111")
     }
 
     /**
@@ -130,6 +132,7 @@ namespace emakefun {
         if (!writeCommand(command, "\r\nOK\r\n", 15000)) {
             throw "Error: WiFi connection failed.";
         }
+        basic.showString("112")
     }
 
     /**
@@ -235,6 +238,8 @@ namespace emakefun {
         if (!writeCommand(command, "\r\nOK\r\n", 500)) {
             throw "Error: MQTT configuration user properties failed.";
         }
+
+        basic.showString("113")
     }
 
     /**
@@ -248,15 +253,17 @@ namespace emakefun {
     //% group="MQTT"
     //% scheme.shadow="enumval"
     //% scheme.defl=ConnectionScheme.kMqttOverTcp
-    //% port.min=1
+    //% port.min=2
     //% port.max=65535
     //% reconnect.defl=true
     //% weight=65
-    export function mqttConnect(host: string, port: number, reconnect: boolean): void {
+    export function mqttConnect(host: string, port: number, reconnect: boolean = true): void {
         const command = `AT+MQTTCONN=0,"${host}",${port},${reconnect ? 1 : 0}`;
         if (!writeCommand(command, "\r\nOK\r\n", 10000)) {
             throw "Error: MQTT connection failed.";
         }
+
+        basic.showString("114")
     }
 
     /**
