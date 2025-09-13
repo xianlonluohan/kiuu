@@ -80,7 +80,6 @@ namespace emakefun {
      */
     //% block="restart ESP-AT module, timeout(ms) %timeout_ms"
     //% subcategory="Luoyu67"
-    //% group="Manager"
     //% timeout_ms.min=0
     //% timeout_ms.defl=2000
     //% weight=99
@@ -214,8 +213,8 @@ namespace emakefun {
 
     /**
      * Set MQTT user properties.
-     * @param scheme Mqtt connection scheme.
-     * @param client_id Mqtt client ID.
+     * @param scheme MQTT connection scheme.
+     * @param client_id MQTT client ID.
      * @param username Username.
      * @param password Password.
      * @param path Resource path.
